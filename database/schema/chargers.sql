@@ -4,6 +4,7 @@ CREATE TABLE CHARGERS (
     ChargerNumber NUMBER NOT NULL,
     ChargerType VARCHAR2(30) NOT NULL,
     PowerOutput NUMBER(6,2) NOT NULL,
+    PricePerKWh NUMBER(6,2) NOT NULL,
     Status VARCHAR2(20) NOT NULL,
 
     CONSTRAINT PK_CHARGERS
@@ -21,6 +22,9 @@ CREATE TABLE CHARGERS (
 
     CONSTRAINT CK_CHARGERS_POWER
         CHECK (PowerOutput > 0),
+
+    CONSTRAINT CK_CHARGERS_PRICE
+        CHECK (PricePerKWh > 0),
 
     CONSTRAINT CK_CHARGERS_STATUS
         CHECK (Status IN ('Available', 'Occupied', 'Maintenance'))
