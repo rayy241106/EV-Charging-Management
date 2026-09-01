@@ -4,7 +4,7 @@ CREATE TABLE VEHICLES (
     VehicleNumber VARCHAR2(20) NOT NULL,
     VehicleModel VARCHAR(100) NOT NULL,
     VehicleType VARCHAR(30) NOT NULL,
-    BatteryCapacity NUMBER(6,2),
+    BatteryCapacity NUMBER(6,2) NOT NULL,
 
     CONSTRAINT PK_VEHICLES PRIMARY KEY (VehicleID),
 
